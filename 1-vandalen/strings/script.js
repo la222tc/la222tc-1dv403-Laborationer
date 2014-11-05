@@ -7,13 +7,34 @@ window.onload = function(){
 		// Plats för förändring.		
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
+	if (str.length > 0) {
+		
+		//var stringLength = "";
+		
+		for (var i = 0; i < str.length; i++) {
+			
+			var char = str.charAt(i);
+			
+			if (str.charAt(i) == char.toLowerCase()) {
+				return char = char.toUpperCase();
+			}
+			
+			else if (str.charAt(i) == char.toUpperCase()) {
+				return char = char.toLowerCase();
+			}
+			
+		}
+	}
 	
-
-
-
-
-
-
+	else {
+		throw new Error("Skriv en text");
+	}
+	
+	
+	
+	
+	return "hej";
+	
 	};
 	// ------------------------------------------------------------------------------
 
