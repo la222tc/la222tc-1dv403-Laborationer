@@ -11,14 +11,14 @@ window.onload = function(){
 	//	console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 			
 		// Plats för förändring.
-//	document.write("hej")
+		
 	var g = document.getElementById("theGuess");
 
 	try {
 		
-	//	if (number ) {
-	//		throw new Error();
-	//	}
+		if (number % 1 !== 0) {
+			throw new Error();
+		}
 		numberOfGuesses += 1;	
 		
 		if (secret == number) {
