@@ -2,16 +2,43 @@
 
 window.onload = function(){
 	
-	var secret = Math.random(0, 100); // Detta tal behöver bytas ut mot ett slumpat tal.
+	var secret = Math.floor(Math.random()*101); // Detta tal behöver bytas ut mot ett slumpat tal.
+	var numberOfGuesses = 0;
 	
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var guess = function(number){
-		console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
-		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
+	//	console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
+	//	console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 			
 		// Plats för förändring.
+//	document.write("hej")
+	var g = document.getElementById("theGuess");
 
-
+	try {
+		
+	//	if (number ) {
+	//		throw new Error();
+	//	}
+		numberOfGuesses += 1;	
+		
+		if (secret == number) {
+			g.innerHTML = ("Grattis du vann! Det hemliga talet var " + secret + " och du behövde " + numberOfGuesses + " gissningar för att hitta det. ");
+		}
+		
+		else if (number < secret) {
+			g.innerHTML = ("Det hemliga talet är högre än: " + number);
+		}
+		
+		else if (number > secret) {
+			g.innerHTML = ("Det hemliga talet är lägre än: " + number);
+		}
+	} 
+		
+	catch (e) {
+		g.innerHTML = "Fel format!!";
+	}
+	
+	
 		// Returnera exempelvis: 
 		// [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."]
 		// [false, "Det hemliga talet är högre!"]
@@ -19,10 +46,11 @@ window.onload = function(){
 		// [false, "Talet är utanför intervallet 0 - 100"]		
 	};
 	
+	
 	// ------------------------------------------------------------------------------
 
 
-
+	var hej = document.querySelector("hejhopp");
 	// Kod för att hantera utskrift och inmatning. Denna ska du inte behöva förändra
 	var p = document.querySelector("#value"); // Referens till DOM-noden med id="#value"
 	var input = document.querySelector("#number");
