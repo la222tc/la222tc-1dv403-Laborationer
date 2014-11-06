@@ -9,21 +9,23 @@ window.onload = function(){
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
 	if (str.length > 0) {
 		
-		//var stringLength = "";
+		var stringLength = "";
 		
 		for (var i = 0; i < str.length; i++) {
 			
 			var char = str.charAt(i);
 			
-			if (str.charAt(i) == char.toLowerCase()) {
-				return char = char.toUpperCase();
+			if (char == char.toLowerCase()) {
+				stringLength = stringLength + char.toUpperCase().replace(/a/i, "#" );
+				//char = char.toUpperCase();
 			}
 			
-			else if (str.charAt(i) == char.toUpperCase()) {
-				return char = char.toLowerCase();
+			else if (char == char.toUpperCase()) {
+				stringLength = stringLength + char.toLowerCase().replace(/A/i, "#" );
 			}
 			
 		}
+		return stringLength;
 	}
 	
 	else {
@@ -33,7 +35,6 @@ window.onload = function(){
 	
 	
 	
-	return "hej";
 	
 	};
 	// ------------------------------------------------------------------------------
