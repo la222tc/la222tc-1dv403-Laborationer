@@ -5,13 +5,24 @@ window.onload = function(){
 	
 	var birthday = function(date){
 		
-
-
-			// Din kod här.
-
-
-
-
+		try {
+			
+		var dateNow = new Date();
+		var birthday = new Date(date);
+	
+		
+	//	if (date !== Date()) {
+	//		throw new Error();
+	//	}
+		
+		var theDate = (birthday.getTime() - dateNow.getTime()) / (1000*60*60*24) ;
+		return Math.ceil(theDate);
+		
+		} 
+		
+		catch (e) {
+			alert("Fel format!")
+		}
 	};
 	// ------------------------------------------------------------------------------
 
