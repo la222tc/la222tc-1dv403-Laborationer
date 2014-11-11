@@ -9,21 +9,35 @@ window.onload = function(){
 			
 		var dateNow = new Date();
 		var birthday = new Date(date);
-	
+		var theDate = (birthday.getTime() - dateNow.getTime());
 		
-	//	if (dateNow > birthday) {
-	//		return alert("Ange ett datum som är från och med dagens datum och framåt")
-	//	}
+		birthday.setFullYear(dateNow.getFullYear());
 		
-		var theDate = (birthday.getTime() - dateNow.getTime()) / (1000*60*60*24) ;
-		return Math.ceil(theDate);
-		
+		if (theDate < 0 ) {
+			birthday.setFullYear(dateNow.getFullYear() + 1);
+			
+		}
+			
+				
+		return Math.ceil((birthday.getTime() - dateNow.getTime()) / (1000*60*60*24));
+	    
 		} 
 		
 		catch (e) {
 			alert("Fel format")
 		}
 	};
+	
+		//	if ( birthday < dateNow){
+	//		if (birthday === dateNow) {
+	//			return Math.ceil((birthday.getTime() - dateNow.getTime()) / (day));
+	//		}
+	//		else{
+	//		birthday.setFullYear(dateNow.getFullYear() + 1);
+	//		}
+	//	}
+	
+	
 	// ------------------------------------------------------------------------------
 
 
