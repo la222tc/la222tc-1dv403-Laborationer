@@ -11,9 +11,9 @@ window.onload = function(){
 		var birthday = new Date(date);
 	
 		
-		if (dateNow > birthday) {
-			return alert("Ange ett datum som är från och med dagens datum och framåt")
-		}
+	//	if (dateNow > birthday) {
+	//		return alert("Ange ett datum som är från och med dagens datum och framåt")
+	//	}
 		
 		var theDate = (birthday.getTime() - dateNow.getTime()) / (1000*60*60*24) ;
 		return Math.ceil(theDate);
