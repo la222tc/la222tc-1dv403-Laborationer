@@ -28,15 +28,6 @@ window.onload = function(){
 		}
 	};
 	
-		//	if ( birthday < dateNow){
-	//		if (birthday === dateNow) {
-	//			return Math.ceil((birthday.getTime() - dateNow.getTime()) / (day));
-	//		}
-	//		else{
-	//		birthday.setFullYear(dateNow.getFullYear() + 1);
-	//		}
-	//	}
-	
 	
 	// ------------------------------------------------------------------------------
 
