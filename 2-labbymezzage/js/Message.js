@@ -12,12 +12,14 @@ function Message(message, date) {
         message = _text;
     }
     
+    
     this.getDate = function() {
-        
-    var _date = new Date();
-    var hour = _date.getHours();
-    var minute = _date.getMinutes();
-    var seconds = _date.getSeconds();
+    
+    // Tar ut timmar, minuter och sekunder ur date och sätter ihop dom i en variabel och returnerar det    
+   // var _date = new Date();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var seconds = date.getSeconds();
     
     var theDate = hour + ":" + minute + ":" + seconds;
     
@@ -31,5 +33,13 @@ function Message(message, date) {
     Message.prototype.toString = function() {
         return this.getText()+" ("+this.getDate()+")";
     };
+    
+    Message.prototype.getHTMLText = function() {
+        alert("ej klar")
+    }
+    
+    Message.prototype.getDateText = function() {
+        alert("ej klar")
+    }
     
 }
