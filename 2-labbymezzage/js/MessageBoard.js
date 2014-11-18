@@ -9,7 +9,7 @@ var MessageBoard = {
     init: function(){
         
         var submit = document.getElementById("submit");
-        
+        //submit.addEventListener("click", createMessage(), displayMessages(), false)
         submit.onclick = function(){
             createMessage();
             //alert(MessageBoard.messages[0]);
