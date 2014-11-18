@@ -1,0 +1,82 @@
+body {
+    background-color:#7897AB;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+#content {
+    width:700px;
+    margin:auto;
+    margin-top:100px;
+}
+
+#mainMessage {
+    border:1px solid black;
+    border-radius:10px;
+    background-color:white;
+    height:100%;
+    float:left;
+    padding-bottom:10px;
+}
+
+#labbyimage {
+    margin-left: 135px;
+    margin-bottom:30px;
+}
+
+#messageTextArea {
+    width: 650px;
+	height: 120px;
+	border: 1px solid gray;
+	margin-left:23px;
+	float:left;
+}
+
+#submit {
+    float:right;
+    margin-right:20px;
+    margin-top:1px;
+    border-radius:10px;
+}
+
+#submit:hover {
+    background-color:#7897AB;
+    cursor:pointer;
+}
+
+#amountOfMessages {
+    float:right;
+    margin-right:5px;
+}
+
+#numberOfMessages {
+    float:right;
+}
+
+.message {
+    text-align:left;
+    width:98%;
+    float:left;
+    margin-top:10px;
+    margin-left:5px;
+    border-radius:5px;
+    background-color:#7897AB;
+}
+
+.theMessage {
+    width:650px;
+    float:left;
+}
+
+.timeAndDelete {
+    float:right;
+    margin-right:7px;
+}
+
+.timeStamp {
+    float:right;
+    margin-right:3px;
+}

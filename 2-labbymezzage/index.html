@@ -3,10 +3,27 @@
 <head>
 	<meta charset="UTF-8" />
  	<title>JavaScript - Laboration 2 - Labbymezzage</title>
-
+    <link rel="stylesheet" href="css/csslabby.css" type="text/css" />
 </head>
     <body>
         
+        <div id="content">
+            <img src="labbyimage.png" id="labbyimage"></img>
+            <div id="mainMessage">
+                
+                <div class="message">
+                 <p class="theMessage"></p> 
+                    <a class="timeAndDelete delete"href="#"></a><a class="timeAndDelete time" href="#"></a>
+                <p class="timeStamp"></p>
+                </div>
+                
+                <p id="amountOfMessages"> 0<p id="numberOfMessages">Antal meddelanden: </p></p>
+                <form id="messageForm">
+                    <input id="messageTextArea" type="textarea" name="messageInput"/>
+                    <input id="submit" type="submit" value="Submit"/>
+                </form>
+            </div>
+        </div>
         
         <script type="text/javascript" src="js/MessageBoard.js"></script>
         <script type="text/javascript" src="js/Message.js"></script>

@@ -6,11 +6,11 @@ function Message(message, date) {
  
     this.getText = function(){
         return message;
-    }
+    };
     
     this.setText = function(_text) {
         message = _text;
-    }
+    };
     
     
     this.getDate = function() {
@@ -35,11 +35,11 @@ function Message(message, date) {
     };
     
     Message.prototype.getHTMLText = function() {
-        alert("ej klar")
-    }
+        alert("ej klar");
+    };
     
     Message.prototype.getDateText = function() {
-        alert("ej klar")
-    }
+        alert("ej klar");
+    };
     
 }
