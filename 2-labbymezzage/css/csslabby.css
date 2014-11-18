@@ -56,6 +56,16 @@ footer, header, hgroup, menu, nav, section {
     float:right;
 }
 
+#messageMain {
+    text-align:left;
+    width:98%;
+    float:left;
+    margin-top:30px;
+    margin-left:5px;
+    border-radius:5px;
+    background-color:#7897AB;
+}
+
 .message {
     text-align:left;
     width:98%;

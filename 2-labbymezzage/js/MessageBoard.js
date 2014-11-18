@@ -12,44 +12,62 @@ var MessageBoard = {
         
         submit.onclick = function(){
             createMessage();
+            //alert(MessageBoard.messages[0]);
             displayMessages();
+            
+            return false;
         };
         
         function displayMessages(){
             document.getElementById("messageTextArea").innerHTML = "";
             
             for (var i = 0; i < MessageBoard.messages.length; ++i) {
-                MessageBoard.displayMessage(i);
+                displayMessage(i);
             }
         }
         
         function displayMessage(messageID){
-            var msg = document.getElementsByClass("message");
+            var msg = document.getElementById("messageMain");
             var newDiv = document.createElement("div");
             var newP = document.createElement("p");
             var aDelete = document.createElement("a");
             var aTime = document.createElement("a");
             var imgDelete = document.createElement("img");
             var imgTime = document.createElement("img");
+            var timeStampP = document.createElement("p");
             
-            newDiv.setAttribute("class", "message");
-            newP.setAttribute("class", "theMessage");
-            aDelete.setAttribute("class", "timeAndDelete");
-            aTime.setAttribute("class", "timeAndDelete");
-            imgDelete.setAttribute("class", "timeAndDelete");
-            imgTime.setAttribute("class", "timeAndDelete");
+            newDiv.className = "message";
+            newP.className = "theMessage";
+            aDelete.className = "timeAndDelete";
+            aTime.className = "timeAndDelete";
+            imgDelete.className = "delete";
+            newDiv.className = "time";
+            timeStampP.className = "timeStamp";
+            
             
             msg.appendChild(newDiv);
             newDiv.appendChild(newP);
-            newP.innerHTML = MessageBoard.messages[messageID].getText();
             newDiv.appendChild(aDelete);
             newDiv.appendChild(aTime);
             newDiv.appendChild(imgDelete);
             newDiv.appendChild(imgTime);
+            newDiv.appendChild(timeStampP);
+            
+            newP.innerHTML = MessageBoard.messages[messageID];
             
             
+            //var hej = document.querySelector(".message");
+            //hej.appendChild(newDiv);
+           // document.msg.appendChild(newDiv);
+           // newDiv.setAttribute("class", "message");
+            //newP.setAttribute("class", "theMess,age");
+            //aDelete.setAttribute("class", "timeAndDelete");
+            //aTime.setAttribute("class", "timeAndDelete");
+            //imgDelete.setAttribute("class", "timeAndDelete");
+            //imgTime.setAttribute("class", "timeAndDelete");
             
-        }
+            //var myImage = images.namedItem("myImage");
+        };
         
         function createMessage(){
             
