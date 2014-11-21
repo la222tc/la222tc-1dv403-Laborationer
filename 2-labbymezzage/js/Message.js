@@ -13,7 +13,7 @@ function Message(message, date) {
     };
     
     
-    this.getDate = function() {
+    this.getTime = function() {
     
     // Tar ut timmar, minuter och sekunder ur date och sätter ihop dom i en variabel och returnerar det    
    // var _date = new Date();
@@ -26,6 +26,10 @@ function Message(message, date) {
     return theDate;
     };
     
+    this.getDate = function(){
+        return date;
+    };
+    
     this.setDate = function(_date) {
         date = _date;
     };
@@ -35,14 +39,18 @@ function Message(message, date) {
     };
     
     Message.prototype.getHTMLText = function() {
-        return this.getText();
+       return this.getText().replace(/\n/g, "<br />");
     };
     
     Message.prototype.getDateText = function() {
-        var day = date.getDay();
-        var month = date.getMonth();
-        var year = date.getFullYear();
-        return day + month + year + this.getDate(); 
+        var monthNames = [ "Januari", "Februari", "Mars", "April", "Maj", "Juni",
+            "Juli", "Augusti", "September", "Oktober", "November", "December" ];
+            
+            var month = monthNames[date.getMonth()];
+            
+        return "Inlägget skapades den " + date.getDate() + " " + 
+		month + " " + date.getFullYear() + " " + " klockan " +
+		date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     };
     
 }
