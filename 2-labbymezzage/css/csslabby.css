@@ -2,11 +2,6 @@ body {
     background-color:#7897AB;
 }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
 #content {
     width:700px;
     margin:auto;
@@ -54,6 +49,7 @@ footer, header, hgroup, menu, nav, section {
 
 #numberOfMessages {
     float:right;
+    margin-right:5px;
 }
 
 #messageMain {
@@ -63,7 +59,6 @@ footer, header, hgroup, menu, nav, section {
     margin-top:30px;
     margin-left:5px;
     border-radius:5px;
-    background-color:#7897AB;
 }
 
 .message {
@@ -73,20 +68,33 @@ footer, header, hgroup, menu, nav, section {
     margin-top:10px;
     margin-left:5px;
     border-radius:5px;
+    border:1px solid black;
     background-color:#7897AB;
 }
 
 .theMessage {
-    width:650px;
+    width:87%;
     float:left;
-}
-
-.timeAndDelete {
-    float:right;
-    margin-right:7px;
+    margin-left:3px;
 }
 
 .timeStamp {
     float:right;
     margin-right:3px;
+    margin-bottom: -2px;
+    font-size: 14px;
+}
+
+.delTimeAndTime {
+    float:left;
+    width:10%;
+    padding-left: 12px;
+}
+
+.time {
+    margin-left:5px;
+}
+
+.delete {
+    margin-left:10px;
 }

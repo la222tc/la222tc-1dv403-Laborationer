@@ -9,17 +9,24 @@ var MessageBoard = {
     init: function(){
         
         var submit = document.getElementById("submit");
-        //submit.addEventListener("click", createMessage(), displayMessages(), false)
-        submit.onclick = function(){
-            createMessage();
-            //alert(MessageBoard.messages[0]);
-            displayMessages();
+        submit.addEventListener("click", function(e){
+            e.preventDefault();
             
-            return false;
-        };
+            createMessage();
+            displayMessages();
+            numberOfMessages();
+        });
+      
+       
+        function numberOfMessages(){
+            var nr = document.getElementById('numberOfMessages');
+            
+            var total = MessageBoard.messages.length;
+            nr.innerHTML = "Antal meddelanden: " + total;
+        }
         
         function displayMessages(){
-            document.getElementById("messageTextArea").innerHTML = "";
+            document.getElementById("messageMain").innerHTML = "";
             
             for (var i = 0; i < MessageBoard.messages.length; ++i) {
                 displayMessage(i);
@@ -35,15 +42,33 @@ var MessageBoard = {
             var imgDelete = document.createElement("img");
             var imgTime = document.createElement("img");
             var timeStampP = document.createElement("p");
+            var delTimeAndTime = document.createElement("div");
             
-            newDiv.className = "message";
+            newDiv.id = "message" + messageID;
             newP.className = "theMessage";
             aDelete.className = "timeAndDelete";
             aTime.className = "timeAndDelete";
             imgDelete.className = "delete";
-            newDiv.className = "time";
+            imgTime.className = "time";
             timeStampP.className = "timeStamp";
+            delTimeAndTime.className = "delTimeAndTime";
             
+            imgDelete.setAttribute("src", "deletepic.ico");
+            aDelete.setAttribute("href", "#");
+            imgTime.setAttribute("src", "timestamppic.ico");
+            aTime.setAttribute("href", "#");
+            
+            newDiv.style.overflow = "hidden";
+            newDiv.style.backgroundColor = "#7897AB";
+            newDiv.style.textAlign = "left";
+            newDiv.style.width = "98%";
+            newDiv.style.cssFloat = "left";
+            newDiv.style.marginTop = "10px";
+            newDiv.style.marginLeft = "5px";
+            newDiv.style.borderRadius = "5px";
+            newDiv.style.border ="1px solid black";
+            
+   
             
             msg.appendChild(newDiv);
             newDiv.appendChild(newP);
@@ -52,72 +77,31 @@ var MessageBoard = {
             newDiv.appendChild(imgDelete);
             newDiv.appendChild(imgTime);
             newDiv.appendChild(timeStampP);
+            aDelete.appendChild(imgDelete);
+            aTime.appendChild(imgTime);
+            delTimeAndTime.appendChild(aDelete);
+            delTimeAndTime.appendChild(aTime);
+            newDiv.appendChild(delTimeAndTime);
+            delTimeAndTime.appendChild(timeStampP);
             
-            newP.innerHTML = MessageBoard.messages[messageID];
+            newP.innerHTML = MessageBoard.messages[messageID].getHTMLText();
+            timeStampP.innerHTML = MessageBoard.messages[messageID].getDate();
             
-            
-            //var hej = document.querySelector(".message");
-            //hej.appendChild(newDiv);
-           // document.msg.appendChild(newDiv);
-           // newDiv.setAttribute("class", "message");
-            //newP.setAttribute("class", "theMess,age");
-            //aDelete.setAttribute("class", "timeAndDelete");
-            //aTime.setAttribute("class", "timeAndDelete");
-            //imgDelete.setAttribute("class", "timeAndDelete");
-            //imgTime.setAttribute("class", "timeAndDelete");
-            
-            //var myImage = images.namedItem("myImage");
-        };
+    
+        }
         
         function createMessage(){
             
             var mess = new Message(document.getElementById("messageTextArea").value, new Date());
             MessageBoard.messages.push(mess);
         }
-         //submit.onclick = function(){
-        //    var article = document.createElement("article");
-        //    var p = document.createElement("p");
-        //    var a = document.createElement("a");
-        //    var aa = document.createElement("a");
-        //    var footer = document.createElement("footer");
-        //    article.appendChild(p);
-        //    article.appendChild(a);
-        //    article.appendChild(aa);
-        //    article.appendChild(footer);
+        
+        var del = document.getElementById("")
+        
+        function removeMessage(messageID){
             
-        //    document.getElementsByClass("theMessage").innerHTML = createMessage();
-            
-        //    var newArticle = document.querySelector("#mainMessage .message");
-        //    newArticle.appendChild(article);
-            
-        //};
-    //  alert(mess);
-    //  alert(mess.getText());
-    //  mess.setText("En annan text");
-    //  alert(mess);
-
-   // var mess = new Message("Testmeddelande", new Date());
-    //var mess2 = new Message("Testmeddelande2", new Date());
-    //var mess3 = new Message("Testmeddelande3", new Date());
-    //var mess4 = new Message("Testmeddelande4", new Date());
-    
-    
-    // lägger till de skapade meddelanden till arrayen messages
-    //MessageBoard.messages.push(mess);
-    //MessageBoard.messages.push(mess2);
-    //MessageBoard.messages.push(mess3);
-    //MessageBoard.messages.push(mess4);
-    
-    
-    // Antal Meddelande i arrayen messages
-    var total = MessageBoard.messages.length;
-    
-   // for (var i = 0; i < MessageBoard.messages.length; i++) {
-     //   alert(MessageBoard.messages[i]);
-    //}
-    
-       //alert(MessageBoard.messages[1].getText());
-       //alert(total);
+        }
+       
     }
     
 };

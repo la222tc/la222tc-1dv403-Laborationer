@@ -35,11 +35,14 @@ function Message(message, date) {
     };
     
     Message.prototype.getHTMLText = function() {
-        alert("ej klar");
+        return this.getText();
     };
     
     Message.prototype.getDateText = function() {
-        alert("ej klar");
+        var day = date.getDay();
+        var month = date.getMonth();
+        var year = date.getFullYear();
+        return day + month + year + this.getDate(); 
     };
     
 }
