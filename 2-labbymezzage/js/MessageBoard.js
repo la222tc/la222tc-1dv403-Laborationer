@@ -31,6 +31,7 @@ var MessageBoard = {
                 createMessage();
                 numberOfMessages();
                 displayMessages();
+                text.value = "";
             }
             });
        
