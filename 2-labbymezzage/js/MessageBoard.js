@@ -20,9 +20,10 @@ var MessageBoard = {
         var text = document.getElementById("messageTextArea");
             
         text.addEventListener("keypress", function (e) {
-                
+                    
+            // key code for enter
             if (e.keyCode === 13 && e.shiftKey) {
-                return "\r\n";
+                return "\n";
             }
             
             else if (e.keyCode === 13) {
