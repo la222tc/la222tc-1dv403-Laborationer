@@ -100,7 +100,7 @@ function memory(rows, cols) {
                 firstGuess.src = "pics/0.png";
                 secondGuess.src = "pics/0.png";
                 flippedBrick = 0;
-            }, 800);
+            }, 500);
         }
 
     }
