@@ -6,9 +6,10 @@ function memory(rows, cols) {
         var firstGuess;
         var secondGuess;
         var newMem = [];
-        var maxNumberOfClicks = 2;
         var flippedBrick = 0;
-        var numberOfBricksFlipped = 0;
+        var numberOfTries = 0;
+        var numberOfPairs = (rows * cols) / 2;
+        var pairsFound = 0;
         
         createMemoryBoard();
         
@@ -72,8 +73,9 @@ function memory(rows, cols) {
             
             }
             
-           flippedBrick += 1;
-        
+            flippedBrick += 1;
+            numberOfTries += 1;
+            
         if (flippedBrick === 1) {
             firstGuess = target;
             console.log(firstGuess);
@@ -86,8 +88,13 @@ function memory(rows, cols) {
 
         if (flippedBrick === 2 && firstGuess.className === secondGuess.className) {
             flippedBrick = 0;
-            
-        } else if (flippedBrick === 2 && firstGuess.className != secondGuess.className) {
+            pairsFound += 1;
+            if (pairsFound === numberOfPairs) {
+                alert("Grattis du klarade spelet på "+ numberOfTries / 2 + " försök");
+            }
+        } 
+        
+        else if (flippedBrick === 2 && firstGuess.className != secondGuess.className) {
             
             window.setTimeout(function () {
                 firstGuess.src = "pics/0.png";
