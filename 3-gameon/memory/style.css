@@ -1,0 +1,21 @@
+body {
+    background-color:gray;
+}
+#content {
+    
+    text-align:center;
+}
+
+#memoryTable {
+    background-color:white;
+    display:table;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid black;
+    border-radius:10px;
+    box-shadow:0px 0px 22px 9px rgba(50, 50, 50, 0.75);
+}
+
+h1 {
+    opacity: 0.7;
+}

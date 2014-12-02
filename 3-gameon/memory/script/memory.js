@@ -27,6 +27,7 @@ function memory(rows, cols) {
             var div = document.getElementById("content");
             var table = document.createElement("table");
             var number = 0;
+            table.id = "memoryTable";
             
             div.appendChild(table);
             
@@ -50,13 +51,22 @@ function memory(rows, cols) {
                     img.className = newMem[number];
                     number++;
                     
+                    a.onkeypress = function (e) {
+                        var target = e.target;
+                        if (e.keyCode === 13 ) {
+                            
+                             turnBrick(target);
+                         }
+                    };
+                    
                     a.onclick = function (e) {
                         
                         var target = e.target;
                         turnBrick(target);
                     };
                    
-                }
+                    
+                } 
             }
             
         }
