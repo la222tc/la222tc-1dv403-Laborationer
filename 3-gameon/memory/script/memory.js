@@ -11,7 +11,7 @@ function memory(rows, cols) {
         var numberOfPairs = (rows * cols) / 2;
         var pairsFound = 0;
         
-        createMemoryBoard();
+        
         
         function createMemoryBoard() {
             newMem = RandomGenerator.getPictureArray(rows, cols);
@@ -51,20 +51,37 @@ function memory(rows, cols) {
                     img.className = newMem[number];
                     number++;
                     
+                    /*
                     a.addEventListener("keypress", function (e) {
-            
-                  //    if (e.keyCode === 13) {
-                            var target = e.target;
-                            console.log("hej");
-                            turnBrick(target);
-                    //    }
+                        var target = e.target;          
+                        var child = e.target.childNodes[0];
+                        console.log(target);
+                        console.log(child);
+                        //var target = e.target.childNodes[0];
+                        
+                  //      e.preventDefault();
+                        //console.log(e.keyCode);
+                      if (e.keyCode === 13) {
+                            //console.log("hej");
+                            
+                            //turnBrick(target);
+                   
+                        }
                      });
+                     */
                     a.addEventListener("click", function(e){
                         if (flippedBrick === 2) {
                              return flippedBrick = 0;
                          }
                       //   console.log(flippedBrick);
-                        var target = e.target;
+                      var target;
+                        if(e.target === this){
+                            target = e.target.childNodes[0];
+                        }
+                        else{
+                            target = e.target;
+                        }
+                        
                         turnBrick(target);
                     });
                 } 
@@ -83,7 +100,7 @@ function memory(rows, cols) {
         }
         
         function turnBrick(target) {
-            
+            console.log(target);
             for (var i = 0; i < newMem.length; i++) {
            
             
@@ -122,8 +139,9 @@ function memory(rows, cols) {
                 flippedBrick = 0;
             }, 500);
         }
-
+        
     }
+    createMemoryBoard();
 }
 
 
