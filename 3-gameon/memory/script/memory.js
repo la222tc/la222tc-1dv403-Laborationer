@@ -61,10 +61,13 @@ function memory(rows, cols) {
                     
                     a.onclick = function (e) {
                         
+                         if (flippedBrick === 2) {
+                             return flippedBrick = 0;
+                         }
+                      //   console.log(flippedBrick);
                         var target = e.target;
                         turnBrick(target);
                     };
-                   
                     
                 } 
             }
@@ -82,7 +85,6 @@ function memory(rows, cols) {
             }
             
             }
-            
             flippedBrick += 1;
             numberOfTries += 1;
             
