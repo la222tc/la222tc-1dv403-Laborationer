@@ -70,6 +70,16 @@ function memory(rows, cols) {
                 } 
             }
             
+            // Reset button
+            var button = document.createElement("button");
+            div.appendChild(button);
+            button.id = "button";
+            button.innerHTML = "Reset";
+            
+            button.addEventListener("click", function (e) {
+                div.innerHTML = "";
+                memoryapp.init();
+            });
         }
         
         function turnBrick(target) {
