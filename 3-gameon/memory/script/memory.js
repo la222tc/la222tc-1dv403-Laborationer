@@ -85,7 +85,6 @@ function memory(rows, cols) {
         }
         
         function turnBrick(target) {
-            console.log(target);
             for (var i = 0; i < newMem.length; i++) {
            
             
