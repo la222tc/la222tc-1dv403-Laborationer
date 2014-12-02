@@ -51,34 +51,19 @@ function memory(rows, cols) {
                     img.className = newMem[number];
                     number++;
                     
-                    /*
-                    a.addEventListener("keypress", function (e) {
-                        var target = e.target;          
-                        var child = e.target.childNodes[0];
-                        console.log(target);
-                        console.log(child);
-                        //var target = e.target.childNodes[0];
-                        
-                  //      e.preventDefault();
-                        //console.log(e.keyCode);
-                      if (e.keyCode === 13) {
-                            //console.log("hej");
-                            
-                            //turnBrick(target);
-                   
-                        }
-                     });
-                     */
                     a.addEventListener("click", function(e){
                         if (flippedBrick === 2) {
                              return flippedBrick = 0;
                          }
                       //   console.log(flippedBrick);
                       var target;
+                      
                         if(e.target === this){
                             target = e.target.childNodes[0];
                         }
-                        else{
+                        
+                        else {
+                            
                             target = e.target;
                         }
                         
