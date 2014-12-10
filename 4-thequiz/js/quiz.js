@@ -8,6 +8,7 @@
     answer: document.getElementById("answer"),
     submit: document.getElementById("button"),
     wrongAnswer: document.getElementById("wrongAnswer"),
+    textBox: document.getElementById("answer"),
     pers: null,
     numberOfTries: 0,
     array: [],
@@ -18,7 +19,13 @@
             e.preventDefault();
             quiz.sendQuestion(quiz.answer.value, quiz.pers.nextURL);
         });
-    
+        
+        quiz.textBox.addEventListener("keypress", function (e) {
+            if (e.keycode === 13) {
+            e.preventDefault();
+            quiz.sendQuestion(quiz.answer.value, quiz.pers.nextURL);
+            }
+        });
         
         quiz.displayQuestion(quiz.url);
     },
@@ -70,7 +77,6 @@
                else {
                    quiz.wrongAnswer.innerHTML = "Fel Svar, försök igen";
                    quiz.numberOfTries += 1;
-                   quiz.array.push(quiz.numberOfTries);
                }
                
            }
