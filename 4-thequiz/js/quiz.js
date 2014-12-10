@@ -21,6 +21,7 @@
         });
         
         quiz.textBox.addEventListener("keypress", function (e) {
+            console.log(e.keycode);
             if (e.keycode === 13) {
             e.preventDefault();
             quiz.sendQuestion(quiz.answer.value, quiz.pers.nextURL);
