@@ -1,0 +1,84 @@
+body {
+    background-color:#3A7DBF;
+}
+#content{
+    width:1024px;
+    height:640px;
+    margin:auto;
+}
+
+#window {
+    position: relative;
+    width:1024px;
+    height:640px;
+    background-size:100%;
+    background-image:url("../img/winter3.jpg");
+    background-repeat:no-repeat;
+    margin-top:50px;
+    border:3px solid black;
+    border-radius:5px;
+}
+
+#windowbar {
+    background-image:url("../img/winter2.png");
+    background-size:100%;
+}
+
+#imagewindow {
+    position: absolute; left: 0; bottom: 0;
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    margin-left:10px;
+    margin-bottom:6px;
+}
+
+#imagewindow:hover {
+    width:60px;
+    height:60px;
+    margin-left:5px;
+    margin-bottom:0px;
+}
+
+
+/* Imagewiewer */
+
+.imageWiewer {
+    background-color:#3A7DBF;
+    width:300px;
+    height:500px;
+    border-radius:5px;
+    margin-left:50px;
+    margin-top:20px;
+    -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 146, 249, 1);
+    -moz-box-shadow:    0px 0px 30px 8px rgba(0, 146, 249, 1);
+    box-shadow:         0px 0px 30px 8px rgba(0, 146, 249, 1);
+}
+
+.wiewHeader {
+    background-color:#3A57BF;
+    width:100%;
+    height:35px;
+    border-radius:5px 5px 1px 1px;
+    -webkit-box-shadow: 0px -3px 30px 8px rgba(219, 208, 215, 0.43);
+    -moz-box-shadow:    0px -3px 30px 8px rgba(219, 208, 215, 0.43);
+    box-shadow:         0px -3px 30px 8px rgba(219, 208, 215, 0.43);
+    float:left;
+}
+
+.wiewContent {
+    width:100%;
+    height:440px;
+    float:left;
+}
+
+.wiewFooter {
+    width:100%;
+    height:25px;
+    float:left;
+    background-color:#3A57BF;
+    border-radius:0px 0px 5px 5px;
+}
+ /*   -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 146, 249, 0.68);
+    -moz-box-shadow:    0px 0px 30px 8px rgba(0, 146, 249, 0.68);
+    box-shadow:         0px 0px 30px 8px rgba(0, 146, 249, 0.68);
