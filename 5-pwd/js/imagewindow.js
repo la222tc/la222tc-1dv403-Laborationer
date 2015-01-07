@@ -18,9 +18,30 @@ var imagewindow = {
         var wiewFooter = document.createElement("footer");
         wiewFooter.className = "wiewFooter";
         
+        var headerImage = document.createElement("img");
+        headerImage.className = "headerImage";
+        headerImage.src = "img/iconen.png";
+        headerImage.alt = "Header Image";
+        
+        var headerText = document.createElement("p");
+        headerText.className = "headerText";
+        headerText.innerHTML = "Image Viewer";
+        
+        var headerCloseImage = document.createElement("img");
+        headerCloseImage.className = "headerCloseImage";
+        headerCloseImage.src = "img/closeimage.png";
+        headerCloseImage.alt = "Close button";
+        
+        var headerCloseTag = document.createElement("a");
+        headerCloseTag.setAttribute("href", "#");
+        
         content.appendChild(imageWiewer);
         imageWiewer.appendChild(wiewHeader);
         imageWiewer.appendChild(wiewContent);
         imageWiewer.appendChild(wiewFooter);
+        wiewHeader.appendChild(headerImage);
+        wiewHeader.appendChild(headerText);
+        wiewHeader.appendChild(headerCloseTag);
+        headerCloseTag.appendChild(headerCloseImage);
     }
 };
