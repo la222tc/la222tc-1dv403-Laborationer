@@ -2,8 +2,25 @@
 
 var main = {
     
+    openImageWindow: document.getElementById("imagewindow"),
+    count: 0,
+    
     init: function () {
-        imagewindow.createwindow();
+        
+        main.openImageWindow.addEventListener("click", function (e) {
+            e.preventDefault();
+            main.count += 1;
+            
+            if (main.count === 1) {
+                imagewindow.createwindow();   
+            }
+            else {
+                return;
+            }
+            
+            
+        });
+        
     } 
      
 };

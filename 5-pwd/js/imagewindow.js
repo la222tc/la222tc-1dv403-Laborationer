@@ -3,6 +3,8 @@
 
 var imagewindow = {
     
+    theWindow: document.getElementById("window"),
+    
     createwindow: function () {
         var content = document.getElementById("window");
         
@@ -28,11 +30,12 @@ var imagewindow = {
         headerText.innerHTML = "Image Viewer";
         
         var headerCloseImage = document.createElement("img");
-        headerCloseImage.className = "headerCloseImage";
+        headerCloseImage.id = "headerCloseImage";
         headerCloseImage.src = "img/closeimage.png";
         headerCloseImage.alt = "Close button";
         
         var headerCloseTag = document.createElement("a");
+        headerCloseTag.id = "closeWindow";
         headerCloseTag.setAttribute("href", "#");
         
         content.appendChild(imageWiewer);
@@ -43,5 +46,12 @@ var imagewindow = {
         wiewHeader.appendChild(headerText);
         wiewHeader.appendChild(headerCloseTag);
         headerCloseTag.appendChild(headerCloseImage);
+        
+        headerCloseTag.onclick = function(){
+            console.log("testing");
+            imagewindow.theWindow.removeChild(imageWiewer);
+            
+            main.count = 0;
+        };
     }
 };
