@@ -9,16 +9,16 @@ var imagewindow = {
         var content = document.getElementById("window");
         
         var imageWiewer = document.createElement("div");
-        imageWiewer.className = "imageWiewer";
+        imageWiewer.id = "imageWiewer";
         
         var wiewHeader = document.createElement("header");
         wiewHeader.className = "wiewHeader";
         
         var wiewContent = document.createElement("div");
-        wiewContent.className = "wiewContent";
+        wiewContent.id = "wiewContent";
         
         var wiewFooter = document.createElement("footer");
-        wiewFooter.className = "wiewFooter";
+        wiewFooter.id = "wiewFooter";
         
         var headerImage = document.createElement("img");
         headerImage.className = "headerImage";
@@ -38,6 +38,17 @@ var imagewindow = {
         headerCloseTag.id = "closeWindow";
         headerCloseTag.setAttribute("href", "#");
         
+        var footerDiv = document.createElement("div");
+        footerDiv.id = "footerDiv";
+        
+        var footerImage = document.createElement("img");
+        footerImage.id = "footerImage";
+        footerImage.src = "img/ajax-loader.gif";
+        
+        var footerText = document.createElement("p");
+        footerText.id = "footerText";
+        footerText.innerHTML = "...Loading";
+        
         content.appendChild(imageWiewer);
         imageWiewer.appendChild(wiewHeader);
         imageWiewer.appendChild(wiewContent);
@@ -46,6 +57,10 @@ var imagewindow = {
         wiewHeader.appendChild(headerText);
         wiewHeader.appendChild(headerCloseTag);
         headerCloseTag.appendChild(headerCloseImage);
+        wiewFooter.appendChild(footerDiv);
+        footerDiv.appendChild(footerImage);
+        footerDiv.appendChild(footerText);
+        
         
         headerCloseTag.onclick = function(){
             console.log("testing");
