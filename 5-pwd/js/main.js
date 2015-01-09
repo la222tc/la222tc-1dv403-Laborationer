@@ -8,6 +8,8 @@ var main = {
     url: "http://homepage.lnu.se/staff/tstjo/labbyServer/imgviewer/",
     xhr: new XMLHttpRequest(),
     imageArray: [],
+    thumbWidth: 0,
+    thumbHeight: 0,
     
     
     init: function () {
@@ -39,13 +41,26 @@ var main = {
                    
                     main.imageArray = JSON.parse(main.xhr.responseText);
                     console.log(main.imageArray);
+                    
+                    for (var i = 0; i < main.imageArray.length; i++) {
+                        if (main.imageArray[i].thumbWidth > main.thumbWidth) {
+                            main.thumbWidth = main.imageArray[i].thumbWidth;
+                        }
+                        if (main.imageArray[i].thumbHeight > main.thumbHeight) {
+                            main.thumbHeight = main.imageArray[i].thumbHeight;
+                        }
+                    }
                    
                }
                
-               
+                main.showImages();
+                
+                var wiewFooter = document.getElementById("wiewFooter");
+                var footerDiv = document.getElementById("footerDiv");
+                wiewFooter.removeChild(footerDiv);
            }
            
-        main.showImages();
+        
            
            
        };
@@ -53,27 +68,41 @@ var main = {
         main.xhr.open("GET", main.url, true);
         main.xhr.send(null);
         
-//        var hej = document.getElementById("wiewFooter");
-  //      var jeh = document.getElementById("footerDiv");
-    //    hej.removeChild(jeh);
+
     },
     
     showImages: function () {
-
+        console.log("height" + main.thumbHeight);
+        console.log("Width" + main.thumbWidth);
         
         var wiewContent = document.getElementById("wiewContent");
+        var desktopImage = document.getElementById("window");
         
-        for (var i = 0; i < main.imageArray.length; i++) {
-            //console.log(main.imageArray[i].URL);
-            
+        
+         main.imageArray.forEach(function (theImage) {
             var image = document.createElement("img");
-            image.src = main.imageArray[i].thumbURL;
+            image.src = theImage.thumbURL;
             
-            wiewContent.appendChild(image);
-        }
+            var imageA = document.createElement("a");
+            imageA.setAttribute("href", "#");
+            imageA.classList.add("images");
+            imageA.style.width = main.thumbWidth + "px";
+            imageA.style.height = main.thumbHeight + "px";
+            
+            wiewContent.appendChild(imageA);
+            imageA.appendChild(image);
+            
+            imageA.addEventListener("click", function (e) {
+            e.preventDefault();
+            desktopImage.style.background = "url(" + theImage.URL + ")";
+            console.log("HEjhej");
+            });
+        });
         
     }
+    
      
 };
 
 window.onload = main.init;
+
